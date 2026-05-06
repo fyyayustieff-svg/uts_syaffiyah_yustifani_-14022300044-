@@ -1,108 +1,58 @@
-Analisis Komentar Pengguna Aplikasi sentuh tanahku
-Tugas UTS Big Data
-Identitas Mahasiswa
+# Analisis Komentar Pengguna Aplikasi Sentuh Tanahku
+## Tugas UTS Big Data
 
-    Nama : Syaffiyah yustifani
-    NIM : 14022300044
-    Program Studi : Sistem Informasi
+### Identitas Mahasiswa
+* **Nama :** Syaffiyah yustifani
+* **NIM :** 14022300044
+* **Program Studi :** Sistem Informasi
 
-Deskripsi Penelitian
+---
 
-Project ini dibuat untuk menganalisis komentar pengguna aplikasi Sentuh Tanahku yang tersedia di Google Play Store.
+### Deskripsi Penelitian
+Project ini dibuat untuk menganalisis komentar pengguna aplikasi **Sentuh Tanahku** yang tersedia di Google Play Store. 
 
 Analisis dilakukan untuk mengetahui:
+* Bahasa yang paling sering digunakan pengguna.
+* Jenis gaya bahasa dalam komentar.
+* Sentimen komentar (positif, negatif, atau netral).
+* Topik yang sering dibahas terkait layanan aplikasi.
 
-bahasa yang paling sering digunakan oleh pengguna,
-jenis gaya bahasa dalam komentar pengguna,
-sentimen komentar (positif, negatif, atau netral),
-serta topik yang paling sering dibahas terkait layanan pertanahan dalam aplikasi.
+---
 
-Hasil dari penelitian ini diharapkan dapat memberikan gambaran mengenai persepsi dan pengalaman pengguna, serta menjadi bahan evaluasi untuk meningkatkan kualitas layanan aplikasi Sentuh Tanahku di masa mendatang.
+### Pengambilan Dataset
+Dataset diambil menggunakan Python dengan library `google-play-scraper`.
 
-Pengambilan Dataset
+* **Jumlah Data:** 100 komentar terbaru.
+* **Kolom Data:** `userName`, `score`, `at`, dan `content`.
 
-Dataset diambil menggunakan Python dan library:
+---
 
-google-play-scraper
+### Metode & Library
+Analisis data dilakukan menggunakan pendekatan **NLP (Natural Language Processing)** dengan bantuan library berikut:
+* `pandas` (Olah data)
+* `matplotlib` (Visualisasi grafik)
+* `langdetect` (Deteksi bahasa)
+* `google-play-scraper` (Scraping data)
 
-Jumlah data yang digunakan:
+---
 
-    100 komentar pengguna terbaru
+### Hasil Analisis
 
-Kolom data yang diperoleh:
+#### Kategori Gaya Bahasa & Sentimen
+* **Gaya Bahasa:** Indonesia Umum, Gaul, Sunda, dan Inggris.
+* **Sentimen:** Positif, Negatif, dan Netral.
 
-    userName
-    score
-    at
-    content
+#### Daftar File & Output
+| Nama File | Keterangan |
+| :--- | :--- |
+| `ulasan_google_play.csv` | Dataset mentah dari Play Store |
+| `hasil_analisis_lengkap.csv` | Data hasil pemrosesan NLP |
+| `grafik_gaya_bahasa.png` | Visualisasi distribusi bahasa |
+| `grafik_topik_komentar.png` | Visualisasi topik utama |
 
-Metode Analisis
+---
 
-Analisis data dilakukan menggunakan pendekatan NLP (Natural Language Processing).
-Library yang digunakan
+### Kesimpulan
+Berdasarkan hasil analisis, mayoritas pengguna menggunakan Bahasa Indonesia. Sebagian besar komentar berisi kritik dan saran mengenai **login akun, error aplikasi, pendaftaran tanah, serta akses layanan.** Namun, terdapat juga komentar positif yang menyatakan aplikasi membantu proses administrasi secara digital.
 
-    pandas
-    matplotlib
-    langdetect
-    google-play-scraper
-
-Analisis yang dilakukan
-
-    Deteksi bahasa komentar
-    Klasifikasi gaya bahasa
-    Analisis sentimen komentar
-    Pengelompokan topik komentar
-
-Kategori Gaya Bahasa
-
-Komentar pengguna dibagi menjadi beberapa kategori:
-
-    Indonesia Umum
-    Gaul
-    Sunda
-    Inggris
-
-Kategori Sentimen
-
-Hasil sentimen dibagi menjadi:
-
-    Positif
-    Negatif
-    Netral
-
-Hasil File Analisis
-
-File hasil yang dihasilkan:
-
-    ulasan_google_play.csv
-    hasil_sentimen.csv
-    hasil_analisis_lengkap.csv
-
-Grafik hasil analisis:
-
-    grafik_sentimen.png
-    grafik_gaya_bahasa.png
-    grafik_topik_komentar.png
-
-Kesimpulan
-
-Berdasarkan hasil analisis, mayoritas pengguna menggunakan Bahasa Indonesia dalam memberikan komentar pada aplikasi Sentuh Tanahku.
-
-Sebagian besar komentar berisi kritik dan saran mengenai:
-
-kendala login akun,
-error atau gangguan pada aplikasi,
-kesulitan dalam mengakses informasi sertifikat tanah,
-serta kecepatan dan kejelasan layanan.
-
-Namun, terdapat juga komentar positif yang menyatakan bahwa aplikasi ini membantu mempermudah masyarakat dalam mengakses layanan pertanahan secara online.
-
-Tools
-
-    Google Colab
-    Python
-    Pandas
-    Matplotlib
-    Google Play Scraper
-    Langdetect
-
+**Tools yang digunakan:** Google Colab, Python, Pandas, Matplotlib.
