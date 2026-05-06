@@ -9,50 +9,67 @@
 ---
 
 ### Deskripsi Penelitian
-Project ini dibuat untuk menganalisis komentar pengguna aplikasi **Sentuh Tanahku** yang tersedia di Google Play Store. 
+Project ini dibuat untuk menganalisis komentar pengguna aplikasi **Sentuh Tanahku** yang tersedia di Google Play Store.
 
-Analisis dilakukan untuk mengetahui:
-* Bahasa yang paling sering digunakan pengguna.
-* Jenis gaya bahasa dalam komentar.
-* Sentimen komentar (positif, negatif, atau netral).
-* Topik yang sering dibahas terkait layanan aplikasi.
+**Tujuan Analisis:**
+* Mengetahui bahasa yang paling sering digunakan pengguna.
+* Mengklasifikasikan jenis gaya bahasa komentar.
+* Menentukan sentimen komentar (positif, negatif, atau netral).
+* Mengidentifikasi topik yang paling sering dibahas pengguna aplikasi.
 
 ---
 
 ### Pengambilan Dataset
-Dataset diambil menggunakan Python dengan library `google-play-scraper`.
-
+Dataset dikumpulkan secara otomatis dengan ketentuan:
+* **Tools:** Python & Library `google-play-scraper`.
 * **Jumlah Data:** 100 komentar terbaru.
-* **Kolom Data:** `userName`, `score`, `at`, dan `content`.
+* **Atribut Data:** `userName`, `score`, `at`, `content`.
 
 ---
 
-### Metode & Library
-Analisis data dilakukan menggunakan pendekatan **NLP (Natural Language Processing)** dengan bantuan library berikut:
-* `pandas` (Olah data)
-* `matplotlib` (Visualisasi grafik)
-* `langdetect` (Deteksi bahasa)
-* `google-play-scraper` (Scraping data)
+### Metode Analisis
+Proses pengolahan data menggunakan pendekatan **NLP (Natural Language Processing)** dengan tahapan:
+1. **Deteksi Bahasa Komentar:** Mengidentifikasi bahasa yang digunakan pengguna.
+2. **Klasifikasi Gaya Bahasa:** Mengelompokkan jenis bahasa (Indonesia Umum, Gaul, Sunda, dll).
+3. **Analisis Sentimen:** Menilai apakah komentar bersifat positif, negatif, atau netral.
+4. **Pengelompokan Topik:** Menentukan isu utama terkait layanan pertanahan.
 
 ---
 
-### Hasil Analisis
+### Kategori Hasil Analisis
 
-#### Kategori Gaya Bahasa & Sentimen
-* **Gaya Bahasa:** Indonesia Umum, Gaul, Sunda, dan Inggris.
-* **Sentimen:** Positif, Negatif, dan Netral.
+#### 1. Kategori Gaya Bahasa
+* **Indonesia Umum**
+* **Gaul**
+* **Sunda**
+* **Inggris**
 
-#### Daftar File & Output
-| Nama File | Keterangan |
+#### 2. Kategori Sentimen
+* **Positif:** Kepuasan pengguna terhadap layanan.
+* **Netral:** Pertanyaan atau saran penggunaan.
+* **Negatif:** Keluhan teknis atau kendala aplikasi.
+
+---
+
+### Hasil File & Output
+| Jenis Output | Nama File |
 | :--- | :--- |
-| `ulasan_google_play.csv` | Dataset mentah dari Play Store |
-| `hasil_analisis_lengkap.csv` | Data hasil pemrosesan NLP |
-| `grafik_gaya_bahasa.png` | Visualisasi distribusi bahasa |
-| `grafik_topik_komentar.png` | Visualisasi topik utama |
+| **Dataset Mentah** | `ulasan_google_play.csv` |
+| **Data Terolah** | `hasil_sentimen.csv`, `hasil_analisis_lengkap.csv` |
+| **Visualisasi (PNG)** | `grafik_sentimen.png`, `grafik_gaya_bahasa.png`, `grafik_topik_komentar.png` |
 
 ---
 
 ### Kesimpulan
-Berdasarkan hasil analisis, mayoritas pengguna menggunakan Bahasa Indonesia. Sebagian besar komentar berisi kritik dan saran mengenai **login akun, error aplikasi, pendaftaran tanah, serta akses layanan.** Namun, terdapat juga komentar positif yang menyatakan aplikasi membantu proses administrasi secara digital.
+Berdasarkan hasil analisis, mayoritas pengguna menggunakan **Bahasa Indonesia**. Sebagian besar komentar berisi kritik dan saran mengenai:
+* **Masalah login akun & error aplikasi.**
+* **Pendaftaran tanah & akses layanan pertanahan.**
+* *Catatan:* Terdapat sentimen positif bagi pengguna yang merasa terbantu dalam pengecekan berkas tanah secara digital.
 
-**Tools yang digunakan:** Google Colab, Python, Pandas, Matplotlib.
+---
+
+### Tools & Library
+* **Environment:** Google Colab
+* **Bahasa:** Python
+* **Library:** `Pandas`, `Matplotlib`, `Langdetect`, `Google Play Scraper`
+*
